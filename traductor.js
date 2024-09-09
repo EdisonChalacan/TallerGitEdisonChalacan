@@ -1,5 +1,4 @@
 function numeroALetras(num) {
-
     const unidades = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"];
     const decenas = ["", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"];
     const especiales = ["once", "doce", "trece", "catorce", "quince"];
@@ -15,4 +14,8 @@ function numeroALetras(num) {
     }
 }
 
-console.log(numeroALetras(35));
+document.getElementById("traducirBtn").addEventListener("click", function() {
+    const numero = parseInt(document.getElementById("numero").value);
+    const resultado = numeroALetras(numero);
+    document.getElementById("resultado").textContent = resultado || "Número fuera de rango";
+});
